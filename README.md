@@ -24,6 +24,7 @@ appsettings.json
   "SMTPAdress": "SMTPADRESS"
 }
 ```
+---
 
 appsettings.Development.json
 
@@ -43,3 +44,7 @@ appsettings.Development.json
   "SMTPAdress": "SMTPADRESS"
 }
 ```
+
+---
+You can also change the Text-Resources in the "Texts.resx" File and in "Textsde-DE.resx".
+For easier changing i would advise to use the VisualStudio Addon "Resx Manager".

@@ -1,0 +1,66 @@
+﻿html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table.floatThead-table {
+    border-top: none;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+th {
+    top: 0;
+    position: sticky;
+    background: white;
+}
+
+.skillicon {
+    width: 36px;
+    height: 36px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+
+/* index styles */
+.blogs a {
+    display: block;
+    margin: 1rem 0px;
+    padding-left: 30px;
+    border-left: 6px solid crimson;
+}
+
+    .blogs a:hover h3, .blogs a:hover p {
+        color: crimson;
+    }
+
+
+a:hover h3 {
+    text-decoration: underline;
+}
+
+a.bloga {
+    text-decoration: none;
+    color: black;
+}

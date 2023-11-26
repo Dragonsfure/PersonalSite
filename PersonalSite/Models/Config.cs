@@ -1,6 +1,4 @@
-﻿using NuGet.Protocol;
-
-namespace PersonalSite.Models {
+﻿namespace PersonalSite.Models {
     public static class Config {
 
         private static readonly IConfiguration _configuration;
@@ -49,6 +47,24 @@ namespace PersonalSite.Models {
         public static string SMTPAdress {
             get {
                 return _configuration.GetValue<string>(nameof(SMTPAdress));
+            }
+        }
+
+        /// <summary>
+        /// Gets the ConnectionString for the Admin, from the AppSettings.json.
+        /// </summary>
+        public static string AdminConnection {
+            get {
+                return _configuration.GetConnectionString(nameof(AdminConnection));
+            }
+        }
+
+        /// <summary>
+        /// Gets the ConnectionString for the Default Connection, from the AppSettings.json.
+        /// </summary>
+        public static string DefaultConnection {
+            get {
+                return _configuration.GetConnectionString(nameof(DefaultConnection));
             }
         }
     }
