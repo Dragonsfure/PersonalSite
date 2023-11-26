@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="d-flex align-items-center justify-content-center flex-column">
+
+    <h1 class="display-3  text-center">@Texts.DlgPrivacyPolicy</h1>
+    <h1 class=" text-center">@Texts.DlgPrivacyHeader</h1>
+    <div class="mt-4 text-center">
+        <p>@Texts.DlgPrivacyTextOne</p>
+        <p>@Texts.DlgPrivacyTextTwo</p>
+    </div>
+</div>

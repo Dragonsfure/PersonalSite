@@ -1,0 +1,42 @@
+﻿@model BlogsVm
+
+@{
+    ViewData["Title"] = "Skill Page";
+}
+<div class="h-100 overflow-hidden" id="cont">
+
+    <div class="row text-center" id="hueber" >
+        <h2>@Texts.DlgBlogList</h2>
+    </div>
+
+    <div class="container overflow-auto " style="display: inline; overflow-y: auto"  id="myCont">
+
+        <div class="row blogs">
+            @foreach (BlogItem blog in Model.BlogItems) {
+                <div class="">
+                    <a class="single bloga" asp-action="DetailBlog" asp-controller="Home" asp-route-id="@blog.ID">
+                        <h3 class="title">@blog.Title</h3>
+                        <p class="snippet">@blog.ShortInfo</p>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function res() {
+            var x = $('#cont').height() - $('#hueber').height() -1;
+            $('#myCont').height(x);
+
+            console.log(x);
+        }
+        res();
+
+        $(window).on("resize", function () {
+            // $('.page-body').height()
+            res();
+        });
+    </script>
+}

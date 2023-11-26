@@ -60,7 +60,7 @@
         </header>
 
 
-        <div class="page-body" id="mainBody">
+        <div class="page-body overflow-scroll" id="mainBody">
             @RenderBody()
         </div>
 
@@ -80,7 +80,10 @@
     <script type="text/javascript">
 
         function resize() {
-            $('#mainBody').height($('body').height() - $('#header').height() - $('#footer').height() -1);
+            var x = $('body').height() - $('#header').height() - $('#footer').height() - 1;
+            $('#mainBody').height(x);
+
+            console.log(x);
         }
         resize();
 

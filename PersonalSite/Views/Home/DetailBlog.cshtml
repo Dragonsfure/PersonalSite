@@ -1,0 +1,45 @@
+﻿@model BlogItem
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div class="container h-100">
+    <div class="h-75  py-4">
+        <div class="row">
+            <h1 class="col-sm-12">
+                <u>
+                    @Model.Title
+                </u>
+            </h1>
+        </div>
+
+        <div class="row d-flex align-items-center">
+            <h3 class="col-sm-10">
+                @Model.ShortInfo
+            </h3>
+            <p class="col-sm-2 ">
+                @Model.Date.ToString("dd/MM/yyyy")
+            </p>
+        </div>
+        <hr />
+
+        <div class="row">
+            @{
+                var lines = Model.Text.Split("\r\n");
+                for (int i = 0; i < lines.Length; i++) {
+                    <p  class="h5">
+                    @lines[i]
+                    </p>
+                }
+           }
+        </div>
+    </div>
+    <div class="h-25  d-flex align-items-end  py-4">
+        <a asp-action="Blogs" class="btn btn-light ma-2 border-2 border">
+            <i class="bi bi-card-list"></i>
+            @Texts.DlgBacktoList
+        </a>
+    </div>
+</div>
