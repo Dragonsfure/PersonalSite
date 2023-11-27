@@ -67,5 +67,24 @@
                 return _configuration.GetConnectionString(nameof(DefaultConnection));
             }
         }
+
+
+        /// <summary>
+        /// Gets the AdminUsername for the Admin, from the AppSettings.json.
+        /// </summary>
+        public static string AdminUsername {
+            get {
+                return _configuration.GetConnectionString(nameof(AdminUsername));
+            }
+        }
+
+        /// <summary>
+        /// Gets the AdminPassword for the Admin, from the AppSettings.json.
+        /// </summary>
+        public static string AdminPassword {
+            get {
+                return _configuration.GetConnectionString(nameof(AdminPassword));
+            }
+        }
     }
 }

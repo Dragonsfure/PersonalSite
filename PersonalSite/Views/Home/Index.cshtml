@@ -2,7 +2,122 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="h-100 d-flex flex-column align-items-center justify-content-center ">
+    <div class="row ">
+        <div class="row  text-center">
+            <div class=" col-3 col-sm-0">
+            </div>
+            <div class="col-6 col-sm-12">
+                <img class="img-fluid"
+                     src="~/WebPicture.png" />
+            </div>
+            <div class=" col-3 col-sm-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+
+        @* nutze grid dafür *@
+        <div class=" d-flex flex-column flex-lg-row justify-content-lg-center align-content-lg-center">
+            @* Github *@
+            <a href="https://github.com/dragonsfure" target="_blank" type="button"
+               class="btn btn-secondary mt-3  me-lg-2 bd-highlight">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-github h2"></i>
+                        </div>
+                        <div class=" col-9 ">
+                            <div class="h-100 container">
+                                <div class="col-8 h-100 d-flex align-items-center justify-content-center h4">
+                                    Github
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+            @* LinkedIn *@
+            <a href="https://www.linkedin.com/in/ahmet-efdal-a-46a5a5290" target="_blank" type="button"
+               class="btn btn-secondary mt-3  me-lg-2 bd-highlight">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-linkedin h2"></i>
+                        </div>
+                        <div class=" col-9 ">
+                            <div class="h-100 container">
+                                <div class="col-8 h-100 d-flex align-items-center justify-content-center h4">
+                                    LinkedIn
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            @* E-Mail *@
+            @* Mit Link für mail machen *@
+            <a href="mailto:dragonsfurestudio@gmail.com" type="button" target="_blank"
+               class="btn btn-secondary mt-3 me-lg-2 bd-highlight">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-envelope h2"></i>
+                        </div>
+                        <div class=" col-9 ">
+                            <div class="h-100 container">
+                                <div class="col-8 h-100 d-flex align-items-center justify-content-center h4">
+                                    E-Mail
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            @* Discord *@
+            <a href="https://discord.gg/X9gatEGgCN" type="button" target="_blank"
+               class="btn btn-secondary mt-3 me-lg-2 bd-highlight">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-discord h2"></i>
+                        </div>
+                        <div class=" col-9 ">
+                            <div class="h-100 container">
+
+                                <div class="col-8 h-100 d-flex align-items-center justify-content-center h4">
+                                    Discord
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            @* Instagram *@
+            <a href="https://www.instagram.com/dragonsfure/" type="button" target="_blank"
+               class="btn btn-secondary mt-3 bd-highlight">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-instagram h2"></i>
+                        </div>
+                        <div class=" col-9 ">
+                            <div class="h-100 container">
+                                <div class="col-8 h-100 d-flex align-items-center justify-content-center h4">
+                                    Instagram
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

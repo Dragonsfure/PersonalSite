@@ -3,31 +3,40 @@
 @{
     ViewData["Title"] = "Skill Page";
 }
-<div class="h-100 overflow-hidden" id="cont">
 
-    <div class="row text-center" id="hueber" >
-        <h2>@Texts.DlgBlogList</h2>
-    </div>
+<div class="row h-75 w-50 my-3 mx-1 table-responsive" id="tableHeightDiv">
+    <div col-lg-12 p-0>
+        <table class=" table tableBlogs Table" id="labelTable">
+            <thead>
+                <tr class="text-center">
+                    <th class="defaultHeader bg-white">
+                        <div class="row text-center" id="hueber">
+                            <h2>@Texts.DlgBlogList</h2>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="mytable">
 
-    <div class="container overflow-auto " style="display: inline; overflow-y: auto"  id="myCont">
-
-        <div class="row blogs">
-            @foreach (BlogItem blog in Model.BlogItems) {
-                <div class="">
-                    <a class="single bloga" asp-action="DetailBlog" asp-controller="Home" asp-route-id="@blog.ID">
-                        <h3 class="title">@blog.Title</h3>
-                        <p class="snippet">@blog.ShortInfo</p>
-                    </a>
-                </div>
-            }
-        </div>
+                @foreach (BlogItem blog in Model.BlogItems) {
+                    <tr>
+                        <td>
+                            <a class="single bloga" asp-action="DetailBlog" asp-controller="Home" asp-route-id="@blog.ID">
+                                <h3 class="title">@blog.Title</h3>
+                                <p class="snippet">@blog.ShortInfo</p>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 
 @section Scripts{
     <script>
         function res() {
-            var x = $('#cont').height() - $('#hueber').height() -1;
+            var x = $('#cont').height() - $('#hueber').height() - 1;
             $('#myCont').height(x);
 
             console.log(x);

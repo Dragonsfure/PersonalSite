@@ -1,4 +1,6 @@
-﻿html,
+﻿/* Custom Body Style */
+/* ------------------------------------------------------------*/
+html,
 body {
     box-sizing: border-box;
     height: 100%;
@@ -6,6 +8,8 @@ body {
     margin: 0;
 }
 
+/* Custom Wrapper  and Body Styles*/
+/* ------------------------------------------------------------*/
 .wrapper {
     box-sizing: border-box;
     min-height: 100%;
@@ -21,40 +25,25 @@ body {
     overflow-x: hidden;
 }
 
-table.floatThead-table {
-    border-top: none;
-    border-bottom: none;
-    background-color: #fff;
-}
-
-th {
-    top: 0;
-    position: sticky;
-    background: white;
-}
-
+/* Custom Icon Styles for Icons */
+/* ------------------------------------------------------------*/
 .skillicon {
     width: 36px;
     height: 36px;
 }
 
-.table {
-    margin-bottom: 0px;
-}
-
-
-/* index styles */
-.blogs a {
+/* Button Like styles for Links*/
+/* ------------------------------------------------------------*/
+.tableBlogs a {
     display: block;
     margin: 1rem 0px;
     padding-left: 30px;
     border-left: 6px solid crimson;
 }
 
-    .blogs a:hover h3, .blogs a:hover p {
+    table a:hover h3, table a:hover p {
         color: crimson;
     }
-
 
 a:hover h3 {
     text-decoration: underline;
@@ -63,4 +52,21 @@ a:hover h3 {
 a.bloga {
     text-decoration: none;
     color: black;
+}
+
+
+/* Custom Table Style with Fixed Header */
+/* ------------------------------------------------------------*/
+.Table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.defaultHeader {
+    position: sticky !important;
+    top: 0 !important;
+}
+
+.table > :not(caption) > * > *{
+    border:none;
 }

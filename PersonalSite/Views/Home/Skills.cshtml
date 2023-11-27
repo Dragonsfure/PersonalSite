@@ -1,0 +1,87 @@
+﻿@model SkillVm
+
+@{
+    ViewData["Title"] = "Skill Page";
+}
+
+@section Css{
+    <style>
+
+    </style>
+}
+
+
+<div class="row h-75 w-50 my-3 mx-1 table-responsive" id="tableHeightDiv">
+    <div col-lg-12 p-0>
+        <table class=" table   table-hover  Table" id="labelTable">
+            <thead>
+                <tr class="text-center">
+                    <th class="defaultHeader bg-white">
+                        <div class="row text-center" id="hueber">
+                            <h2>@Texts.DlgSkillList</h2>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="mytable">
+
+                @foreach (SkillItem skill in Model.SkillItems) {
+                    <tr>
+                        <td>
+
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <a href="@skill.Tutorial">
+                                        @if (!string.IsNullOrEmpty(skill.IconLink)) {
+                                            <img class="skillicon" src="@skill.IconLink" />
+                                        }
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    @skill.Progress.ToString()
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <p class="my-0 ">
+                                        @skill.ProgrammingLanguage
+                                    </p>
+                                </div>
+                                <div class="col-8">
+                                    <div class="progress">
+                                        <div class="progress-bar" style=" width: @((int)skill.Progress)%" role="progressbar"
+                                             aria-valuenow="@((int)skill.Progress)" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+
+        function tablesize() {
+            var x = $('#myskillArea').height() / 0.75;
+            $('#tableHeightDiv').height(0).height(x);
+            $('#labelTable').show();
+
+        }
+
+        tablesize();
+        $(window).resize(function () {
+            tablesize();
+        });
+
+        $(document).ready(function () {
+            $('#labelTable').show();
+            tablesize();
+
+        });
+    </script>
+}
