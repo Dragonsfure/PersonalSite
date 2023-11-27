@@ -2,9 +2,12 @@
 
 This is a Template to create a Basic Website.
 
+**Warning**
+This is not finished yet
 
 Only change a few Fields in the following Files after creating those Files in the following Path "~/PersonalSite" and copying the content in there.
 
+---
 appsettings.json
 
 ```json
