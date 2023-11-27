@@ -61,6 +61,15 @@ namespace PersonalSite {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Back to Home ähnelt.
+        /// </summary>
+        public static string BackToHome {
+            get {
+                return ResourceManager.GetString("BackToHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Message ähnelt.
         /// </summary>
         public static string ContentCaption {
@@ -259,7 +268,7 @@ namespace PersonalSite {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die From: ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die From ähnelt.
         /// </summary>
         public static string FromMailCaption {
             get {

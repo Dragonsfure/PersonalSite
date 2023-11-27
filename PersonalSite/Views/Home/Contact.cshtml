@@ -1,0 +1,76 @@
+﻿@model MailVm;
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="h-75 w-50 d-flex justify-content-center align-items-center ">
+    <form asp-action="@nameof(HomeController.SendMail)"
+          asp-controller="Home" class="w-100">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row my-4">
+            <div class="row  m-0">
+                <div class="col-1 p-0">
+                    <label asp-for="@Model.Mail.Name" class="control-label"></label>
+                </div>
+                <div class="col">
+                    <span asp-validation-for="@Model.Mail.Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row  m-0">
+                <input asp-for="@Model.Mail.Name" class="form-control" />
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="row  m-0">
+                <div class="col-1 p-0">
+                    <label asp-for="@Model.Mail.FromMail" class="control-label"></label>
+                </div>
+                <div class="col">
+                    <span asp-validation-for="@Model.Mail.FromMail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row  m-0">
+                <input asp-for="@Model.Mail.FromMail" class="form-control" />
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="row  m-0">
+                <div class="col-1 p-0">
+                    <label asp-for="@Model.Mail.Subject" class="control-label"></label>
+                </div>
+                <div class="col">
+                    <span asp-validation-for="@Model.Mail.Subject" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row  m-0">
+                <input asp-for="@Model.Mail.Subject" class="form-control" />
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="row m-0">
+                <div class="col-1 p-0">
+                    <label asp-for="@Model.Mail.Content" class="control-label"></label>
+                </div>
+                <div class="col">
+                    <span asp-validation-for="@Model.Mail.Content" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row  m-0">
+                <textarea asp-for="@Model.Mail.Content" rows="5" class="form-control">
+                    </textarea>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a asp-action="@nameof(HomeController.Index)" class="btn btn-light mx-2 border-2 border">
+                <i class="bi bi-house-door"></i>
+                @Texts.BackToHome
+            </a>
+            <button type="submit" class="btn btn-primary  border-2 border ">
+                <i class="bi bi-envelope"></i> 
+                @Texts.DlgSendMail
+            </button>
+        </div>
+    </form>
+</div>
