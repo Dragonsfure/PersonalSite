@@ -1,0 +1,32 @@
+﻿@using PersonalSite;
+@model UserLogin
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row h-75 w-50 d-flex justify-content-center align-items-center flex-row ">
+    <form asp-controller="@AdminController.Name" asp-action="@nameof(AdminController.Login)" class="w-100">
+        <div asp-validation-summary="ModelOnly" class="text-danger "></div>
+        <div class="mb-3 row p-0">
+            <div class="row p-0">
+                <label class="form-label col-12 col-lg-6 col-xl-3" asp-for="@Model.Name"></label>
+                <span asp-validation-for="@Model.Name" class="text-danger col-12 col-lg-6 col-xl-auto"></span>
+            </div>
+            <div class="row p-0">
+                <input type="text" class="form-control" asp-for="@Model.Name">
+            </div>
+        </div>
+        <div class="mb-3 row p-0">
+            <div class="row p-0">
+                <label asp-for="@Model.Password" class="form-label col-12 col-lg-6 col-xl-3"></label>
+                <span asp-validation-for="@Model.Password" class="text-danger  col-12 col-lg-6 col-xl-auto"></span>
+            </div>
+            <div class="row p-0">
+                <input type="password" class="form-control" asp-for="@Model.Password">
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">@Texts.Login</button>
+        </div>
+    </form>
+</div>
