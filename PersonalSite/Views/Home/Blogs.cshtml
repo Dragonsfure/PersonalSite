@@ -4,13 +4,13 @@
     ViewData["Title"] = "Skill Page";
 }
 
-<div class="row h-75 w-50 my-3 mx-1 table-responsive" id="tableHeightDiv">
+<div class="row h-75 w-50 my-3 mx-1 table-responsive">
     <div col-lg-12 p-0>
-        <table class=" table tableBlogs Table" id="labelTable">
+        <table class=" table tableBlogs Table">
             <thead>
                 <tr class="text-center">
                     <th class="defaultHeader bg-white">
-                        <div class="row text-center" id="hueber">
+                        <div class="row text-center">
                             <h2>@Texts.DlgBlogList</h2>
                         </div>
                     </th>
@@ -31,17 +31,3 @@
         </table>
     </div>
 </div>
-
-@section Scripts{
-    <script>
-        function fixTable() {
-            var x = $('#cont').height() - $('#hueber').height() - 1;
-            $('#myCont').height(x);
-        }
-        fixTable();
-
-        $(window).on("resize", function () {
-            fixTable();
-        });
-    </script>
-}
