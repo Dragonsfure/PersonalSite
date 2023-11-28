@@ -17,13 +17,12 @@
                 </tr>
             </thead>
             <tbody id="mytable">
-
-                @foreach (BlogItem blog in Model.BlogItems) {
+                @foreach (BlogDummy blog in Model.BlogItems) {
                     <tr>
                         <td>
-                            <a class="single bloga" asp-action="DetailBlog" asp-controller="Home" asp-route-id="@blog.ID">
-                                <h3 class="title">@blog.Title</h3>
-                                <p class="snippet">@blog.ShortInfo</p>
+                            <a class="single bloga" asp-action="@nameof(HomeController.DetailBlog)" asp-controller="@HomeController.Name" asp-route-id="@blog.Id">
+                                <h3 class="title">@blog.Name</h3>
+                                <p class="snippet">@blog.Description</p>
                             </a>
                         </td>
                     </tr>
@@ -35,17 +34,14 @@
 
 @section Scripts{
     <script>
-        function res() {
+        function fixTable() {
             var x = $('#cont').height() - $('#hueber').height() - 1;
             $('#myCont').height(x);
-
-            console.log(x);
         }
-        res();
+        fixTable();
 
         $(window).on("resize", function () {
-            // $('.page-body').height()
-            res();
+            fixTable();
         });
     </script>
 }

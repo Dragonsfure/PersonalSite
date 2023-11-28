@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="~/favicon.ico" />
     @RenderSection("Css", false)
 </head>
+
 <body>
     <div class="wrapper">
         <header class="page-header" id="header">
@@ -69,13 +70,13 @@
             </div>
         </footer>
     </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
     <script type="text/javascript">
-
         function resize() {
             var x = $('body').height() - $('#header').height() - $('#footer').height() - 1;
             $('#mainBody').height(0).height(x);
@@ -83,7 +84,6 @@
         resize();
 
         $(window).on("resize", function () {
-            // $('.page-body').height()
             resize();
         });
     </script>
