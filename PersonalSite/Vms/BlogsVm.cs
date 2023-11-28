@@ -5,8 +5,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersonalSite.Vms
 {
+    /// <summary>
+    /// Represents a simple Blog Viewmodel.
+    /// </summary>
     public class BlogsVm
     {
+        /// <summary>
+        /// The Basic DataContext with DefaultString Rights.
+        /// </summary>
         private readonly DataContext _context;
 
         public BlogsVm(DataContext context)
@@ -55,9 +61,14 @@ namespace PersonalSite.Vms
         }
     }
 
+    /// <summary>
+    /// Represents a Basic Blog Item. 
+    /// </summary>
+    /// <remarks>
+    /// May change to another Namespace for further use.
+    /// </remarks>
     internal class BlogDummy
     {
-
         public int Id { get; set; } = default;
 
         [Display(Name = "TitleCaption", ResourceType = typeof(Texts))]
