@@ -27,3 +27,7 @@ PersonalSite/appsettings.Development.json
 PersonalSite/appsettings.json
 PersonalSite/Properties/launchSettings.json
 PersonalSite/PersonalSite.csproj.user
+PersonalSite/Properties/PublishProfiles/FolderProfile1.pubxml.user
+PersonalSite/Properties/PublishProfiles/FolderProfile1.pubxml
+PersonalSite/Properties/PublishProfiles/FolderProfile.pubxml
+PersonalSite/Properties/PublishProfiles/FolderProfile.pubxml.user
