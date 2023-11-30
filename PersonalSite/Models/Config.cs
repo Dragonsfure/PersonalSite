@@ -74,7 +74,7 @@
         /// </summary>
         public static string AdminUsername {
             get {
-                return _configuration.GetConnectionString(nameof(AdminUsername));
+                return _configuration.GetValue<string>(nameof(AdminUsername));
             }
         }
 
@@ -83,7 +83,7 @@
         /// </summary>
         public static string AdminPassword {
             get {
-                return _configuration.GetConnectionString(nameof(AdminPassword));
+                return _configuration.GetValue<string>(nameof(AdminPassword));
             }
         }
     }
