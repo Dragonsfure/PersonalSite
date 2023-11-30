@@ -1,0 +1,23 @@
+﻿@using PersonalSite;
+@using Microsoft.AspNetCore.Identity;
+@model AdminVm
+@inject SignInManager<IdentityUser> signInManager;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container" style=" height:75dvh; ">
+    @if (signInManager.IsSignedIn(User)) {
+        <h1>
+            Logged in
+        </h1>
+    } else {
+        <h1>
+            Not logged in
+        </h1>
+        <a asp-action="@nameof(AdminController.Login)" asp-controller="@AdminController.Name" class="btn btn-primary">Login</a>
+    }
+</div>

@@ -51,6 +51,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Models\Interface\" />
   </ItemGroup>
 
 </Project>

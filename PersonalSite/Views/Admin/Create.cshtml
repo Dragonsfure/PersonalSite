@@ -1,0 +1,55 @@
+﻿@using PersonalSite;
+@model BlogItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container" style=" height:75dvh; display: inline; overflow-y: auto">
+
+    <h1>Create</h1>
+
+    <h4>SkillItem</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShortInfo" class="control-label"></label>
+                    <input asp-for="ShortInfo" class="form-control" />
+                    <span asp-validation-for="ShortInfo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Text" class="control-label"></label>
+                    <textarea asp-for="Text" class="form-control" TextMode="MultiLine" rows="5" maxlength="500">
+
+                    </textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+
+                <div class="btn-group mt-3" role="group">
+                    <input type="submit" value="@Texts.DlgAdd" class="btn btn-primary  border-2 border" />
+
+                    <a asp-action="Index" class="btn btn-light ms-2 border-2 border">
+                        <i class="bi bi-card-list"></i>
+                        @Texts.DlgBacktoList
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
