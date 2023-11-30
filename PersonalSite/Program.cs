@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PersonalSite.Data;
 using PersonalSite.Models;
@@ -15,6 +16,36 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddDbContext<AdminContext>(options =>
     options.UseMySql(Config.AdminConnection ?? throw new InvalidOperationException("Connection string 'PersonalSite' not found."), ServerVersion.AutoDetect(Config.AdminConnection)));
 
+builder.Services.Configure<IdentityOptions>(options => {
+    // Password settings.
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+
+    // Lockout settings.
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // User settings.
+    options.User.AllowedUserNameCharacters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = false;
+});
+
+builder.Services.ConfigureApplicationCookie(options => {
+    // Cookie settings
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.LoginPath = "/Admin/Login";
+    options.AccessDeniedPath = "/Admin/AccessDenied";
+    options.SlidingExpiration = true;
+});
+
 //Builds the app.
 var app = builder.Build();
 
@@ -25,21 +56,13 @@ if (!app.Environment.IsDevelopment()) {
     app.UseHsts();
 }
 
-//Code to redirect to the Homepage, if a site wasn't found.
-//Could be used to redirect to an proper Error 404 Page.
-app.Use(async (context, next) => {
-    await next();
-    if (context.Response.StatusCode == 404) {
-        context.Request.Path = "/Home";
-        context.Response.Redirect("/");
-        await next();
-    }
-});
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Uses the Authentication for pages.
+app.UseAuthentication();
 
 app.UseAuthorization();
 
