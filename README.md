@@ -3,7 +3,7 @@
 This is a Template to create a Basic Website.
 
 > [!WARNING]
-> This is not finished yet
+> This is an archived Repository, for a newer Version please get in contact with me.
 
 Only change a few Fields in the following Files after creating those Files in the following Path "~/PersonalSite" and copying the content in there.
 
